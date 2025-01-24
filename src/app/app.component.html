@@ -1,3 +1,242 @@
-<div>
-  <span>hello world</span>
+
+<div class="body">
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">
+        <img src="assets\Frame.svg" alt="imge">
+      </div>
+      
+      <nav class="header-nav">
+        <div style="    margin-left: -300px;
+        position: absolute;
+        font-size: larger;
+        font-weight: bold;
+        margin-top: -4px;
+        color: #F0BA4E;" class="header-nav-item" routerLink="todos" >{{headeritem5}}</div>
+        <div style="    color: #F0BA4E;
+        margin-left: -210px;
+        position: absolute;
+        font-size: larger;
+        font-weight: bold;
+        margin-top: -4px;
+    " class="header-nav-item" routerLink="users" >{{headeritem4}}</div>
+        <div style=" color: #F0BA4E;" class="header-nav-item" routerLink="" >{{headeritem1}}</div>
+        <div class="header-nav-item">{{headeritem2}}</div>
+        <div class="header-nav-item" *ngIf="isShowCatalog">{{headeritem3}}</div>
+        
+      </nav>
+
+      <button   style="position: absolute;
+      margin-left: 52px;
+      border-radius: 10px;
+      background-color: #F0BA4E;" (click)="isShowCatalog = !isShowCatalog">Скрыть/показать Catalog</button>
+    
+    </div>
+    <div class="phone">
+      <pre class="namber">
+      <img src="assets\Phone.svg" alt="imge" style="    position: absolute;
+      margin-left: -40px;
+      margin-top: -5px;">+7(965)084-29-29</pre>
+    </div>
+
+
+  <div class="Vector">
+    <img src="assets\heart 1.svg" alt="" style="    position: absolute;
+    margin-left: 366px;
+    margin-top: 47px;">
+  </div>
+  <div class="exgend">
+  <button class="button-header-left">
+    <img src="assets\Mask group.svg" alt="imge">
+    <span >Пусто</span>
+  </button>
 </div>
+</div>
+
+
+
+
+<div class="navbar">
+  <div class="logo"><img src="assets\Снимок экрана 2024-12-02 142315.png" alt="" class="navbar-img"></div>
+  <div class="nav-items">
+    <div>Каталог</div>
+    <div>Стройматериалы</div>
+    <div>Инструменты</div>
+    <div>Электрика</div>
+    <div>Интерьер и одежда</div>
+<!-- 
+     <div *ngfor="let item of menuItems">{{item}}</div> -->
+     <!-- <div>{{header2item2}}</div>
+     <div>{{header2item3}}</div>
+     <div>{{header2item4}}</div>
+     <div>{{header2item5}}</div> -->
+  </div>
+  <div class="search-container">
+    <input type="text" placeholder="Поиск, например Круг зачистной" class="search-input">
+    <div class="underline"></div> <!-- الخط تحت input -->
+    <img src="assets/search.png" alt="image " class="search-image" style="position: absolute;
+    margin-left: 292px;">
+</div>
+
+<style>
+
+
+.search-container {
+    display: flex;
+    align-items: center; /* لتوسيط العناصر عموديًا */
+    background-color: #F0BA4E; /* الخلفية الصفراء */
+  
+    position: relative; /* لجعل العناصر تتراصف بشكل صحيح */
+    width: 400px;
+height: 40px;
+
+}
+
+.search-input {
+    background-color: transparent; /* خلفية شفافة */
+    border: none; /* إزالة الحدود */
+    color: #000; /* لون النص */
+    padding: 10px; /* مساحة داخلية */
+    border-radius: 5px; /* زوايا مستديرة */
+    outline: none; /* إزالة إطار التركيز الافتراضي */
+    flex: 1; /* لجعل input يشغل المساحة المتاحة */
+    font-size: 16px; /* حجم النص */
+}
+
+.search-input::placeholder {
+    color: #aaa; /* لون النص في الـ placeholder */
+}
+
+.underline {
+    width: 400px; /* عرض الخط */
+    height: 0; /* ارتفاع الخط */
+    position: absolute; /* وضع الخط بشكل مطلق */
+    top: 28px; /* المسافة من الأعلى */
+    left: 0; /* من الجهة اليسرى */
+    border-top: 1px solid #3C3C3B; /* لون الخط */
+    opacity: 1; /* جعل الخط مرئي */
+    z-index: -1; /* خلف العناصر الأخرى */
+}
+
+.search-image {
+    margin-left: 10px; /* مسافة بين input والصورة */
+    cursor: pointer; /* تغيير المؤشر عند hover */
+}
+</style>
+<pre  style="color: white; width: 53;height: 14;">Москва                   </pre>
+<img style="height:12px;width: 12px;" src="assets\map.png" alt="imge" style="    height: 12px;
+width: 12px;
+position: absolute;
+margin-left: 1325px;">
+</div>
+
+
+<!-- <button routerLink="">home</button>
+<button routerLink="users">users</button> -->
+
+<router-outlet></router-outlet>
+
+<!-- <br><br><br><br><br><br><br><br><br><br> -->
+
+
+
+
+
+<!-- *يظهر المكونات والمنتجات * -->
+ 
+<!-- <app-header></app-header> -->
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<footer  class="footer">
+  <div class="footer-container">
+    <!-- قسم التواصل -->
+    <div class="footer-contact">
+      <div class="contact-info">
+        <img src="assets\Frame (3).svg" style="width: 59px; height: 39px;">
+        <h4>Контактный телефон</h4>
+        <p>+7 (812) 309-09-34</p>
+        <p>+7 (965) 084-29-09</p>
+      </div>
+    </div>
+<div class="footer-gmail">
+    <h4>Электронная почта</h4>
+    <p>tustin78&#64;mail.ru</p>
+    <p>info&#64;tustin.ru</p>
+</div>
+
+    <!-- قسم الاشتراك -->
+    <div class="footer-questions">
+<h4 style="color: #FFFFFF;
+font-family: Inter;
+font-size: 18px;
+font-weight: 700;
+line-height: 21.78px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+">Остались вопросы?</h4>
+<p style="width: 534px;
+height: 48px;
+gap: 0px;
+opacity: 0px;font-family: Inter;
+font-size: 14px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #FFFFFF99;">Узнавайте первым о скидках, предложениях и событиях еженедельно в своем почтовом ящике. Отпишитесь в любое время одним щелчком мыши.</p>
+ <br>
+      <form class="email-form">
+        <div>
+        <input type="email" placeholder="Введите свою почту" required /><button type="submit" style="
+     
+font-family: Inter;
+font-size: 10px;
+font-weight: 700;
+line-height: 12.1px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #FFFFFF;
+        ">Отправить</button>
+      </div>
+        
+      </form>
+    </div>
+  </div>
+
+  <!-- الروابط الاجتماعية -->
+  <div>
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <nav class="footer-nav">
+        <a href="#">Главная</a>
+        <a href="#">О компании</a>
+        <a href="#">Каталог</a>
+      </nav>
+    </div>
+    </div>
+    <div class="social-icons">
+      <a href="#"><img src="assets\icons8-facebook-logo-30.png"style="width: 24px;height: 24px;"></a>
+      <a href="#"><img src="assets\icons8-youtube-50.png" style="width: 24px;height: 24px;"></a>
+
+      <a href="#"><img src="assets\icons8-phone-24.png"style="width: 24px;height: 24px;"></a>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    © 2021–2022, EDE
+  
+  </div>
+</footer>
+
+
+
+
+
+
+

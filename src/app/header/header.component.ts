@@ -2,16 +2,15 @@ import { NgFor, NgIf } from '@angular/common';
 import { TemplateLiteral } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
 
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-header',
   standalone: true,
-  imports: [RouterOutlet, NgIf, RouterLink],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [ NgIf],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
 
 // @Component({
@@ -38,7 +37,7 @@ import { HeaderComponent } from "./header/header.component";
  
 
 
-export class AppComponent {
+export class HeaderComponent {
   title = 'githab';
 
  isShowCatalog = true;
@@ -47,7 +46,7 @@ export class AppComponent {
   readonly headeritem2 = 'About Company';
   readonly headeritem3 = 'Catalog';
   readonly headeritem4 = 'Users';
-  readonly headeritem5 = 'Todos';
+  readonly headeritem5 = 'todos';
   isShowImg :boolean = true
 
   // readonly header2item1 = upperCasemenuitems[0];
