@@ -25,10 +25,10 @@ export class createUserFormComponent{
       ]),
     companyName: new FormControl('', [Validators.required,Validators.minLength(2) ]),
     });
-name: any;
-userForm: any;
-email: any;
-
+    name: any;
+    userForm: any;
+    email: any;
+    
 
   public submitFrom(): void {
      this.createUser.emit(this.form.value);

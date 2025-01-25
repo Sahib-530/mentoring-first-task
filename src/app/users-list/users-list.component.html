@@ -3,7 +3,10 @@
    <div style="display: flex;width: 85%;flex-wrap: wrap;padding-left: 230px;">
       <div *ngFor="let user of usersService.users$ | async">
 
-      <app-user-card [user]="user" (deleteUser)="deletUser($event)"></app-user-card>
+      <app-user-card [user]="user" 
+      (deleteUser)="deletUser($event)"
+      (editUser)="editUser($event)"
+      ></app-user-card>
         </div>
      </div>
         <!-- <div style="height: 1000px;margin-top: 1000px;"></div> -->

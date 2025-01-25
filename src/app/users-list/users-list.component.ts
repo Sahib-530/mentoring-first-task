@@ -4,8 +4,7 @@ import { UsersApiService } from "../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../user.service";
 import { createUserFormComponent } from "../create-user-form/create-user-form.component";
-
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 export interface User {
   id: number;
   name: string;
@@ -43,7 +42,7 @@ readonly usersApiService = inject(UsersApiService);
 readonly usersService = inject(UsersService);
 items: any;
 
-constructor() {
+constructor(private snackBar: MatSnackBar) {
  this.usersApiService.getusers().subscribe(
        (response: any) => {
         this.usersService.setUsers(response);
@@ -60,7 +59,26 @@ constructor() {
 
   deletUser(id: number) {
      this.usersService.deleteUser(id)
+     this.snackBar.open('The user has been successfully deleted', 'closing', {
+      duration: 3000,
+
+  });
     }
+
+
+    editUser(user:any) {
+      this.usersService.editUser({
+        ...user,
+        company:{
+          name: user.companyName,
+        }
+      });
+      this.snackBar.open('User modified successfully!', 'closing', {
+        duration: 3000,
+
+      });
+    }
+
 
   public createUser(formData: any) {
     this.usersService.createUser({
@@ -72,9 +90,14 @@ constructor() {
         name: formData.companyName,
       }
     });
+    this.snackBar.open('A new user has been created!', 'closing', {
+      duration: 3000,
+      panelClass: ['custom-snackbar'], // إضافة فئة CSS مخصصة
+    });
     console.log('Данные Формы: ', event);
        console.log(new Date().getTime());
    }
+   
  }
 
 
@@ -86,7 +109,6 @@ constructor() {
 
 
 
- 
 
 
 
